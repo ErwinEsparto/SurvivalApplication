@@ -22,22 +22,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
-import com.kwabenaberko.newsapilib.NewsApiClient;
-import com.kwabenaberko.newsapilib.models.Article;
-import com.kwabenaberko.newsapilib.models.request.TopHeadlinesRequest;
-import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout drawerLayout;
     BottomNavigationView bottomNavigationView;
-    RecyclerView recyclerView;
-    List<Article> articleList = new ArrayList<>();
-    NewsRecyclerAdapter adapter;
-    Button btn_1,btn_2,btn_3,btn_4,btn_5,btn_6,btn_7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,17 +47,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
-        recyclerView = findViewById(R.id.news_recycler_view);
-        setupRecyclerView();
-        getNews("GENERAL");
-        btn_1 = findViewById(R.id.btn_1); btn_1.setOnClickListener(this);
-        btn_2 = findViewById(R.id.btn_2); btn_2.setOnClickListener(this);
-        btn_3 = findViewById(R.id.btn_3); btn_3.setOnClickListener(this);
-        btn_4 = findViewById(R.id.btn_4); btn_4.setOnClickListener(this);
-        btn_5 = findViewById(R.id.btn_5); btn_5.setOnClickListener(this);
-        btn_6 = findViewById(R.id.btn_6); btn_6.setOnClickListener(this);
-        btn_7 = findViewById(R.id.btn_7); btn_7.setOnClickListener(this);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
@@ -105,41 +86,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new AboutFragment()).commit();
         }
         return true;
-    }
-    void setupRecyclerView(){
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new NewsRecyclerAdapter(articleList);
-        recyclerView.setAdapter(adapter);
-    }
-    void getNews(String category){
-        NewsApiClient newsApiClient = new NewsApiClient("b21a886216004f3a83f4081ebd6c8e45");
-        newsApiClient.getTopHeadlines(
-                new TopHeadlinesRequest.Builder()
-                        .language("en")
-                        .category(category)
-                        .build(),
-                new NewsApiClient.ArticlesResponseCallback() {
-                    @Override
-                    public void onSuccess(ArticleResponse response) {
-                        runOnUiThread(()->{
-                            articleList = response.getArticles();
-                            adapter.updateData(articleList);
-                            adapter.notifyDataSetChanged();
-                        });
-                    }
-
-                    @Override
-                    public void onFailure(Throwable throwable) {
-                        Log.i("GOT FAILURE", throwable.getMessage());
-                    }
-                }
-        );
-    }
-
-    @Override
-    public void onClick(View v) {
-        Button btn = (Button) v;
-        String category = btn.getText().toString();
-        getNews(category);
     }
 }

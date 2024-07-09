@@ -40,7 +40,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation ("com.github.KwabenBerko:News-API-Java:1.0.2")
-    implementation ("com.squareup.picasso:picasso:2.8")
 
 }

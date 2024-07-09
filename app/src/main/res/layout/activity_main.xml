@@ -31,72 +31,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/news_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="486dp" />
-        
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:id="@+id/horizontal_buttons">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/btn_1"
-                    android:layout_margin="6dp"
-                    android:text="GENERAL"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/btn_2"
-                    android:layout_margin="6dp"
-                    android:text="BUSINESS"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/btn_3"
-                    android:layout_margin="6dp"
-                    android:text="SPORTS"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/btn_4"
-                    android:layout_margin="6dp"
-                    android:text="TECHNOLOGY"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/btn_5"
-                    android:layout_margin="6dp"
-                    android:text="HEALTH"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/btn_6"
-                    android:layout_margin="6dp"
-                    android:text="ENTERTAINMENT"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/btn_7"
-                    android:layout_margin="6dp"
-                    android:text="SCIENCE"/>
-
-            </LinearLayout>
-
-        </HorizontalScrollView>
-
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <com.google.android.material.bottomappbar.BottomAppBar
                 android:id="@+id/bottomAppBar"

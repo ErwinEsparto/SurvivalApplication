@@ -15,12 +15,6 @@
         android:theme="@style/Theme.SurvivalApplication"
         tools:targetApi="31">
         <activity
-            android:name=".NewsFullActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TestActivity"
-            android:exported="false" />
-        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
