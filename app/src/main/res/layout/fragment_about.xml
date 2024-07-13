@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".AboutFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -18,8 +19,31 @@
         android:id="@+id/image1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/lil.png"
+        android:src="@drawable/lil"
         android:clickable="true"
         android:onClick="onImageClick" />
 
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/erw"
+        android:clickable="true"
+        android:onClick="onImageClick" />
+
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ken"
+        android:clickable="true"
+        android:onClick="onImageClick" />
+
+    <ImageView
+        android:id="@+id/image4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/jas"
+        android:clickable="true"
+        android:onClick="onImageClick" />
 </FrameLayout>

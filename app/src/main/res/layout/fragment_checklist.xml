@@ -9,10 +9,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Checklist"
         android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="@color/blue"
-        />
+        android:text="Checklist"
+        android:textColor="#039BE5"
+        android:textSize="30sp" />
 
 </FrameLayout>
