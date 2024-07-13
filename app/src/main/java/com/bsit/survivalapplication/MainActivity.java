@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -12,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -58,12 +60,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.home) {
                 replaceFragment(new HomeFragment());
+                navigationView.setCheckedItem(R.id.nav_home);
             }
             else if (item.getItemId() == R.id.guides) {
                 replaceFragment(new GuidesFragment());
+                navigationView.setCheckedItem(R.id.nav_guides);
+            }
+            else if (item.getItemId() == R.id.checklist) {
+                replaceFragment(new ChecklistFragment());
+                navigationView.setCheckedItem(R.id.nav_checklist);
             }
             else if (item.getItemId() == R.id.about) {
                 replaceFragment(new AboutFragment());
+                navigationView.setCheckedItem(R.id.nav_about);
             }
             return true;
         });
@@ -75,16 +84,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
     }
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.home) {
+    public boolean onNavigationItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.nav_home) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
         }
-        else if (item.getItemId() == R.id.guides) {
+        else if (item.getItemId() == R.id.nav_guides) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new GuidesFragment()).commit();
         }
-        else if (item.getItemId() == R.id.about) {
+        else if (item.getItemId() == R.id.nav_checklist) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new ChecklistFragment()).commit();
+        }
+        else if (item.getItemId() == R.id.nav_about) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new AboutFragment()).commit();
         }
+        else if (item.getItemId() == R.id.nav_logout) {
+            Toast.makeText(this, "Exiting!", Toast.LENGTH_SHORT).show();
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 }
