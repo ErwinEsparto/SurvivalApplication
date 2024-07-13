@@ -65,6 +65,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             else if (item.getItemId() == R.id.about) {
                 replaceFragment(new AboutFragment());
             }
+            else if (item.getItemId() == R.id.checklist) {
+                replaceFragment(new ChecklistFragment());
+            }
             return true;
         });
     }
@@ -84,6 +87,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         else if (item.getItemId() == R.id.about) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new AboutFragment()).commit();
+        }
+        else if (item.getItemId() == R.id.checklist) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new ChecklistFragment()).commit();
         }
         return true;
     }

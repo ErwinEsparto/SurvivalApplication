@@ -14,5 +14,12 @@
         android:textSize="30sp"
         android:textColor="@color/blue"/>
 
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lil.png"
+        android:clickable="true"
+        android:onClick="onImageClick" />
 
 </FrameLayout>
