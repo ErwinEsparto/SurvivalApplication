@@ -4,4 +4,8 @@
     <string name="close_nav">Close Navigation Drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image1_description">Description for Image 1</string>
+    <string name="image2_description">Description for Image 2</string>
+    <string name="image3_description">Description for Image 3</string>
+    <string name="image4_description">Description for Image 4</string>
 </resources>

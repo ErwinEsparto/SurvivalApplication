@@ -1,18 +1,19 @@
 package com.bsit.survivalapplication;
 
-import android.annotation.SuppressLint;
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 public class AboutFragment extends Fragment {
 
-    // ... Other existing code
+    private TextView descriptionTextView; // Assuming you have a TextView for description
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,17 +32,21 @@ public class AboutFragment extends Fragment {
         image3.setOnClickListener(v -> showDescription("Description 3"));
         image4.setOnClickListener(v -> showDescription("Description 4"));
 
+        // Find and assign descriptionTextView
+        descriptionTextView = view.findViewById(R.id.descriptionTextView);
+
         return view;
     }
 
-    // Method to show description (you can animate this as per your requirement)
+    // Method to show description with animation
     private void showDescription(String description) {
-        // Here, you can implement the sliding down animation or simply update a TextView below the images
-        Toast.makeText(getActivity(), description, Toast.LENGTH_SHORT).show();
-        // Example: Implement sliding down animation using property animations
-        // Assuming you have a TextView for description below the images
-        // descriptionTextView.setText(description);
-        // descriptionTextView.setVisibility(View.VISIBLE);
-        // descriptionTextView.animate().alpha(1.0f).setDuration(500).start();
+        // Update the description TextView with the new text
+        descriptionTextView.setText(description);
+
+        // Animate the visibility of the description TextView
+        descriptionTextView.setVisibility(View.VISIBLE);
+        ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(descriptionTextView, "alpha", 0.0f, 1.0f);
+        alphaAnimator.setDuration(500); // Animation duration in milliseconds
+        alphaAnimator.start();
     }
 }

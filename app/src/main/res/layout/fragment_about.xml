@@ -1,49 +1,217 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:orientation="vertical"
     tools:context=".AboutFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="About Us"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="@color/blue"/>
-
-    <ImageView
-        android:id="@+id/image1"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/lil"
-        android:clickable="true"
-        android:onClick="onImageClick" />
+        android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/image2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/erw"
-        android:clickable="true"
-        android:onClick="onImageClick" />
+        <!-- History Section with Grey Background -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/light_grey"
+            android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/image3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ken"
-        android:clickable="true"
-        android:onClick="onImageClick" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Our History"
+                android:textSize="24sp"
+                android:textColor="@color/black" />
 
-    <ImageView
-        android:id="@+id/image4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/jas"
-        android:clickable="true"
-        android:onClick="onImageClick" />
-</FrameLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The offline OnGuard app was conceived out of a growing concerns for community safety during natural disasters. Developed to provide essential disaster preparedness tools, the app was designed to operate without an internet connection, ensuring accessibility in critical situations. It was launched with features such as offline weather updates and emergency procedures."
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <!-- Developers Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Developers"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textColor="@color/blue"
+                android:padding="16dp" />
+
+            <!-- Developer 1 -->
+            <LinearLayout
+                android:id="@+id/developer1Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Developer 1"
+                    android:textSize="20sp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/descriptionTextView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Short description about Developer 1."
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Image 1 -->
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/lil"
+                android:contentDescription="@string/image1_description"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:onClick="onImageClicked" />
+
+            <!-- Developer 2 -->
+            <LinearLayout
+                android:id="@+id/developer2Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Developer 2"
+                    android:textSize="20sp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/descriptionTextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Short description about Developer 2."
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Image 2 -->
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/erw"
+                android:contentDescription="@string/image2_description"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:onClick="onImageClicked" />
+
+            <!-- Developer 3 -->
+            <LinearLayout
+                android:id="@+id/developer3Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Developer 3"
+                    android:textSize="20sp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/descriptionTextView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Short description about Developer 3."
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Image 3 -->
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ken"
+                android:contentDescription="@string/image3_description"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:onClick="onImageClicked" />
+
+            <!-- Developer 4 -->
+            <LinearLayout
+                android:id="@+id/developer4Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Developer 4"
+                    android:textSize="20sp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/descriptionTextView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Short description about Developer 4."
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Image 4 -->
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/jas"
+                android:contentDescription="@string/image4_description"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:onClick="onImageClicked" />
+
+            <!-- Description TextView -->
+            <TextView
+                android:id="@+id/descriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
