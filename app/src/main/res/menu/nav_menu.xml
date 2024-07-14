@@ -18,14 +18,14 @@
             android:title="Guides"/>
 
         <item
-            android:id="@+id/nav_about"
-            android:icon="@drawable/baseline_info_24"
-            android:title="About Us"/>
-
-        <item
             android:id="@+id/nav_checklist"
             android:icon="@drawable/baseline_checklist_24"
             android:title="Checklist"/>
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/baseline_info_24"
+            android:title="About Us"/>
 
     </group>
     <item

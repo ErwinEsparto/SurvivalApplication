@@ -1,5 +1,6 @@
 package com.bsit.survivalapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
             else if (item.getItemId() == R.id.checklist) {
                 replaceFragment(new ChecklistFragment());
+                navigationView.setCheckedItem(R.id.nav_checklist);
             }
             return true;
         });
