@@ -43,4 +43,5 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation ("it.xabaras.android:recyclerview-swipedecorator:1.4")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 }

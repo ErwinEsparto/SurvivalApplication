@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else if (item.getItemId() == R.id.nav_about) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new AboutFragment()).commit();
         }
-        else if (item.getItemId() == R.id.checklist) {
+        else if (item.getItemId() == R.id.nav_checklist) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new ChecklistFragment()).commit();
         }
         else if (item.getItemId() == R.id.nav_logout) {
